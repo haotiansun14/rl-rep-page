@@ -2,29 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-
-
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-  <title>Academic Project Page</title>
+  <title>RL-REP: Representation-based Reinforcement Learning</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,66 +30,48 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title" style="font-size: 2.9em; font-weight: bold;">RL-REP<br><span style="font-size: 0.8em; font-weight: normal;">Representation-based Reinforcement Learning</span></h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
                   </div>
-
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block">A series of work with</span>
+                    <span class="eql-cntrb"><br>Tongzheng Ren, Chenjun Xiao, Tianjun Zhang, Mengjiao Yang, Joseph E. Gonzalez, <br>Na Li, Zhaoran Wang, Sujay Sanghavi, Dale Schuurmans, Bo Dai</span>
+                    </span>
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="https://arxiv.org/abs/2212.08765" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
+                          <i class="ai ai-arxiv"></i>
                         </span>
-                        <span>Paper</span>
+                        <span>LV-REP Paper</span>
                       </a>
                     </span>
 
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://arxiv.org/abs/2207.07150" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
-                      <i class="fab fa-github"></i>
+                      <i class="ai ai-arxiv"></i>
                     </span>
-                    <span>Code</span>
+                    <span>CTRL Paper</span>
                   </a>
                 </span>
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="https://github.com/haotiansun14/rl-rep" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                    <i class="ai ai-arxiv"></i>
+                    <i class="fab fa-github"></i>
                   </span>
-                  <span>arXiv</span>
+                  <span>Repo</span>
                 </a>
               </span>
             </div>
@@ -122,25 +82,89 @@
   </div>
 </section>
 
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content" style="text-align: left;">   
+    <h4 style="font-weight: normal;">
+      When faced with the intricate trade-off among modeling, exploration, and planning, one might wonder the following question:<br>
+      <br><div style="text-align: center;"><em>What is a practical algorithm with rigorous guarantee to achieve such balance?</em></div>
+      <br>To tackle this problem, we aim to exploit model-based information to provide a reasonable linear function space for model-free planning and exploration.
+    </h3>
   </div>
 </section>
-<!-- End teaser video -->
 
-<!-- Paper abstract -->
+
+<style>
+    /* Updated styles for a more narrow Table of Contents */
+    .table-of-contents {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px auto;
+        width: 800px; /* Fixed width */
+        max-width: 100%; /* Ensures TOC does not exceed the viewport width */
+        background-color: #f8f8f8;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        font-family: Arial, sans-serif;
+    }
+    .table-of-contents h2,
+    .abstract-box h2 {
+        color: #333;
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .table-of-contents ul,
+    .abstract-box ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .table-of-contents li,
+    .abstract-box li {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+    .table-of-contents a,
+    .abstract-box a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+        transition: color 0.3s ease, text-decoration 0.3s ease;
+    }
+    .table-of-contents a:hover,
+    .abstract-box a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+    }
+
+
+  .abstract-box {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 80%;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-family: Arial, sans-serif;
+        }
+        
+</style>
+
+<div class="table-of-contents">
+<h2 class="title" >Table of Contents</h2>
+<ul>
+  <li><a href="#LV-REP">I. LV-REP: Latent Variable Representation for Reinforcement Learning</a></li>
+  <li><a href="#CTRL">II. CTRL: Making Linear MDPs Practical via Contrastive Representation Learning</a></li>
+</ul>
+</div>
+    
+  
+
+<section class="section" id="LV-REP">
+<div class="container is-max-desktop content">   
+  <h2 class="title"><strong>I. LV-REP</strong>: <span style="font-weight: normal;">Latent Variable Representation for Reinforcement Learning</span></h2>
+  <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -148,8 +172,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
+            Deep latent variable models have achieved significant empirical successes in model-based reinforcement learning (RL) due to their expressiveness in modeling complex transition dynamics. On the other hand, it remains unclear theoretically and empirically how latent variable models may facilitate learning, planning, and exploration to improve the sample efficiency of RL. In this paper, we provide a representation view of the latent variable models for state-action value functions, which allows both tractable variational learning algorithm and effective implementation of the optimism/pessimism principle in the face of uncertainty for exploration. In particular, we propose a computationally efficient planning algorithm with UCB exploration by incorporating kernel embeddings of latent variable models. Theoretically, we establish the sample complexity of the proposed approach in the online and offline settings. Empirically, we demonstrate superior performance over current state-of-the-art algorithms across various benchmarks.          </p>
         </div>
       </div>
     </div>
@@ -158,155 +181,138 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Introduction</h2>
+    For both model-free and model-based algorithms, there has been insufficient work considering both statistical and computation tractability and efficiency in terms of learning, planning, and exploration in a unified and coherent perspective for algorithm design. This raises the question:
+    
+    <div style="text-align: center; padding: 10px; margin-top: 20px; margin-bottom: 20px;" class="section hero is-light">
+      <em>Is there a way to design a <strong>provable</strong> and <strong>practical</strong> algorithm that can effectively address both the statistical and computational challenges of Reinforcement Learning (RL)?</em>
     </div>
-  </div>
 </div>
-</div>
+Here, by “provable” we mean the statistical complexity of the algorithm can be rigorously characterized without explicit dependence on the number of states but instead the fundamental complexity of the parameterized representation space; while by “practical” we mean the learning, planning, and exploration components in the algorithm are computationally tractable and can be implemented in real-world scenarios.
+<p>
+This work provides an affirmative answer to the question above by establishing the representation view of latent variable dynamics models through a connection to linear MDPs. Such a connection immediately provides a computationally tractable approach to planning and exploration in the linear space constructed by the flexible deep latent variable model. Such a latent variable model view also provides a variational learning method that remedies the intractability of MLE for general linear MDPs. Our main contributions consist of the following:
+<ul>
+  <li>We establish the representation view of latent variable dynamics models in RL, which naturally induces Latent Variable Representation (LV-Rep) for linearly representing the state-action value function, and paves the way for a practical variational method for representation learning;</li>
+  <li>We provide computation efficient algorithms to implement the principle of optimism and pessimism in the face of uncertainty with the learned LV-Rep for online and offline RL;</li>
+  <li>We theoretically analyze the sample complexity of LV-Rep in both online and offline settings, which reveals the essential complexity beyond the cardinality of the latent variable;</li>
+  <li>We empirically demonstrate LV-Rep outperforms the state-of-the-art model-based and model-free RL algorithms on several RL benchmarks.</li>
+</ul>
+
+    <br>
+
+    <h2 class="title">Experiments</h2>
+    <br>
+    We extensively test our algorithm on the Mujoco and DeepMind Control Suite .      
+    
+    <h3 class="title">Dense-Reward Mujoco Benchmarks</h3>
+    <img src="static/images/lvrep-table1.png" alt="MY ALT TEXT">
+    <br>
+    This table presents all experiment results, where all results are averaged over 4 random seeds. 
+    In practice, we found LV-Rep-C provides comparable or better performance, so that we report its result for LV-Rep in the table. 
+    We present the best model-based RL performance for comparison. 
+<p> The results clearly show that LV-Rep provides significantly better or comparable performance compared to all model-based algorithms. 
+    In particular, in the most challenging domains such as Walker and Ant, most model-based methods completely fail the task, while LV-Rep achieves the state-of-the-art performance in contrast. 
+ Furthermore, LV-Rep shows dominant performance in all domains comparing to two representative representation learning based RL methods, Deep Successor Feature (DeepSF) and SPEDE. 
+    LV-Rep also achieves better performance than the strongest model-free algorithm SAC in most challenging domains except Humanoid.
+
+    <img src="static/images/lvrep-figure1.png" alt="MY ALT TEXT">
+    Finally, this figure provides learning curves of LV-Rep-C and LV-Rep-D in comparison to SAC, which clearly shows that comparing to the SOTA (state-of-the-art) model-free baseline SAC, LV-Rep enjoys great sample efficiency in these tasks.
+
+
+    <h3 class="title">Sparse-Reward DeepMind Control Suite</h3>
+    <img src="static/images/lvrep-table2.png" alt="MY ALT TEXT">
+    <br>
+    We compare all algorithms after running 200K environment steps across 4 random seeds. Results are presented in the table above. We report the result of LV-Rep-C for LV-Rep as it gives better empirical performance. We can clearly observe that LV-Rep dominates the performance across all domains. In relatively dense-reward problems, cheetah-run and walker-run, LV-Rep outperforms all baselines by a large margin. Remarkably, for sparser reward problems, hopper-hop and humanoid-run, LV-Rep provides reasonable results while other methods do not even start learning. 
+    <br>
+    <img src="static/images/lvrep-figure2.png" alt="MY ALT TEXT">
+    <br>
+    We also plot the learning curves of LV-Rep with all competitors in the figure above. This shows that LV-Rep outperforms other baselines in terms of both sample efficiency and final performance.
 </section>
-<!-- End image carousel -->
 
 
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
+<section class="section" id="CTRL">
+  <div class="container is-max-desktop content">   
+    <h2 class="title"><strong>II. CTRL</strong>: <span style="font-weight: normal;">Making Linear MDPs Practical via Contrastive Representation Learning</span></h2>
+    <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              It is common to address the curse of dimensionality in Markov decision processes (MDPs) by exploiting low-rank representations. This motivates much of the recent theoretical study on linear MDPs. However, most approaches require a given representation under unrealistic assumptions about the normalization of the decomposition or introduce unresolved computational challenges in practice. Instead, we consider an alternative definition of linear MDPs that automatically ensures normalization while allowing efficient representation learning via contrastive estimation. The framework also admits confidence-adjusted index algorithms, enabling an efficient and principled approach to incorporating optimism or pessimism in the face of uncertainty. To the best of our knowledge, this provides the first practical representation learning method for linear MDPs that achieves both strong theoretical guarantees and empirical performance. Theoretically, we prove that the proposed algorithm is sample efficient in both the online and offline settings. Empirically, we demonstrate superior performance over existing state-of-the-art model-based and model-free algorithms on several benchmarks.          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
       </div>
     </div>
   </section>
-<!--End paper poster -->
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Introduction</h2>
+      <div class="content">
+        <p>We address the lingering computational efficiency issues in representation learning for linear MDPs. We provide solutions to the aforementioned difficulties, bridge the gap between theory and practice, and eventually establish a sound yet practical foundation for learning in linear MDPs. More specifically:</p>
+        <ul>
+            <li>We clarify the importance of the normalization condition and propose a variant of linear MDPs wherein it is easy to enforce normalization;</li>
+            <li>We develop the ConTrastive Representation Learning algorithm, CTRL, that can implicitly satisfy the density requirement;</li>
+            <li>We incorporate the representation learning techniques in optimistic and pessimistic confidence-adjusted RL algorithms, CTRL-UCB and CTRL-LCB, for both online and offline RL problems, and establish their sample complexities respectively;</li>
+            <li>We conduct a comprehensive comparison to existing state-of-the-art model-based and model-free RL algorithms on several benchmarks for the online and offline settings, demonstrating superior empirical performance of the proposed CTRL.</li>
+        </ul>
+    </div>
+    
+    <h2 class="title">Experiments</h2>
+    <br>
+    We show that CTRL-UCB achieves state-of-the-art performance in MuJoCo and DeepMind Control Suite benchmarks, compared to both model-based (e.g., PETS, ME-TRPO) and model-free RL algorithms (e.g., SAC).    
+    <h3 class="title">Dense-Reward Mujoco Benchmarks</h3>
+    <img src="static/images/ctrl-table1.png" alt="MY ALT TEXT">
+    <br>
+    <p>In the table above, we can see that CTRL-UCBL achieves the state-of-the-art (SoTA) results among all model-based RL algorithms and significantly improves the prior baselines. Despite the improvement in terms of final return, prior model-based RL methods can hardly learn the behaviors such as walking and moving the ant in these two tasks. By contrast, CTRL-UCBL learns the two behaviors successfully.</p>
+    <p>We also compare our algorithm with the SoTA model-free RL method SAC. Our method achieves comparable, sometimes better performance in most of the tasks. Lastly, comparing with two representation learning baselines: DeepSF and SPEDE, CTRL-UCBL also shows dominant performance. However, the performance of CTRL-UCBL is not satisfactory in Humanoid and Hopper environments. It is potentially due to their hard-exploration nature and the linear parametrized Q failed to capture the bonus for exploration.</p>
+    
+
+    <h3 class="title">Sparse-Reward DeepMind Control Suite</h3>
+    <img src="static/images/ctrl-table2.png" alt="MY ALT TEXT">
+    <br>
+    <p>To better understand how CTRL performs in a sparse-reward setting, we conduct experiments on the DeepMind Control Suite. We compare CTRL-UCBM with model-free RL methods like SAC (including 2-layer MLP and 3-layer MLP as critic network) and PPO (3-layer of MLP as value network). In addition, we also compare with the representation learning method DeepSF. 
+    <p>CTRL-UCBM outperforms SAC (2-layer) by a large margin even in relatively dense reward settings like cheetah-run and walker-run. This margin becomes even larger in sparse-reward settings like walker-run-sparse and hopper-hop. Even comparing with SAC using 3-layer MLP, CTRL-UCBM also achieves better performance. This again shows the effectiveness of our method.</p>
+
+    <h3 class="title">Offline Reinforcement Learning</h3>
+    <img src="static/images/ctrl-table3.png" alt="MY ALT TEXT">
+    <br>
+    <p>We compare CTRL-LCB with state-of-the-art offline RL algorithms and include CPC as a representation learning baseline. Besides the state-action representation learned in CTRL-LCB, one major difference between CPC and CTRL-LCB is the additional reward penalty introduced by CTRL-LCB. The average normalized scores are presented in the table above. CTRL-LCB performs well on the medium-expert set of tasks. The medium set of tasks also benefit from our method. However, CTRL-LCB is unable to improve the performance of medium-replay, potentially due to low-quality data induced representations being incapable of recovering the good policy.</p>
+
+
 
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <h2 class="title">Citations</h2>
+      <pre><code>@misc{ren2023latent,
+        title={Latent Variable Representation for Reinforcement Learning}, 
+        author={Tongzheng Ren and Chenjun Xiao and Tianjun Zhang and Na Li and Zhaoran Wang and Sujay Sanghavi and Dale Schuurmans and Bo Dai},
+        year={2023},
+        eprint={2212.08765},
+        archivePrefix={arXiv},
+        primaryClass={cs.LG}
+  }</code></pre>
+  <pre><code>@misc{zhang2022making,
+    title={Making Linear MDPs Practical via Contrastive Representation Learning}, 
+    author={Tianjun Zhang and Tongzheng Ren and Mengjiao Yang and Joseph E. Gonzalez and Dale Schuurmans and Bo Dai},
+    year={2022},
+    eprint={2207.07150},
+    archivePrefix={arXiv},
+    primaryClass={cs.LG}
+}</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
 
 
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
+ 
   </body>
   </html>
