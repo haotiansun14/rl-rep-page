@@ -64,6 +64,16 @@
                   </a>
                 </span>
 
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/2311.12244" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>&mu;LV-Rep Paper</span>
+                  </a>
+                </span>
+
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
                   <a href="https://github.com/haotiansun14/rl-rep" target="_blank"
@@ -156,6 +166,7 @@
 <ul>
   <li><a href="#LV-REP">I. LV-REP: Latent Variable Representation for Reinforcement Learning</a></li>
   <li><a href="#CTRL">II. CTRL: Making Linear MDPs Practical via Contrastive Representation Learning</a></li>
+  <li><a href="#muLV-Rep">III. Efficient Reinforcement Learning from Partial Observability</a></li>
 </ul>
 </div>
     
@@ -232,7 +243,7 @@ This work provides an affirmative answer to the question above by establishing t
     <br>
     We also plot the learning curves of LV-Rep with all competitors in the figure above. This shows that LV-Rep outperforms other baselines in terms of both sample efficiency and final performance.
 </section>
-
+</section>
 
 <section class="section" id="CTRL">
   <div class="container is-max-desktop content">   
@@ -284,16 +295,71 @@ This work provides an affirmative answer to the question above by establishing t
     <img src="static/images/ctrl-table3.png" alt="MY ALT TEXT">
     <br>
     <p>We compare CTRL-LCB with state-of-the-art offline RL algorithms and include CPC as a representation learning baseline. Besides the state-action representation learned in CTRL-LCB, one major difference between CPC and CTRL-LCB is the additional reward penalty introduced by CTRL-LCB. The average normalized scores are presented in the table above. CTRL-LCB performs well on the medium-expert set of tasks. The medium set of tasks also benefit from our method. However, CTRL-LCB is unable to improve the performance of medium-replay, potentially due to low-quality data induced representations being incapable of recovering the good policy.</p>
+</section>
+</section>
 
+<section class="section" id="muLV-Rep">
+  <div class="container is-max-desktop content">
+    <h2 class="title"><strong>III. &mu;LV-Rep</strong>: <span style="font-weight: normal;">Efficient Reinforcement Learning from Partial Observability</span></h2>
+    <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              In most real-world reinforcement learning applications, state information is only partially observable, which breaks the Markov decision process assumption and  leads to inferior performance for algorithms that conflate observations with state. Partially Observable Markov Decision Processes (POMDPs), on the other hand, provide a general framework that allows for partial observability to be accounted for in learning, exploration and planning, but presents significant computational and statistical challenges. To address these difficulties, we develop a representation-based perspective that leads to a coherent framework and tractable algorithmic approach for practical reinforcement learning from partial observations. We provide a theoretical analysis for justifying the statistical efficiency of the proposed algorithm, and also empirically demonstrate the proposed algorithm can surpass state-of-the-art performance with partial observations across various benchmarks, advancing reliable reinforcement learning towards more practical applications.          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Introduction</h2>
+      <div class="content">
+        Empirical successes have motivated investigation into structured POMDPs that allow some of the core computational and statistical complexities to be overcome, and provides an improved understanding of exploitable structure and practical new algorithms with rigorous justification. However, most works rely on the existence of an ideal computational oracle for planning, which, unsurprisingly, is infeasible in most cases, hence difficult to apply in practice. Although there have been a few attempts to overcome the computational complexity of POMDPS, these algorithms are either only applicable to the tabular setting or rely on an integration oracle that quickly become intractable for large observation spaces. This gap immediately motivates the question:
+    <div style="text-align: center; padding: 10px; margin-top: 20px; margin-bottom: 20px;" class="section hero is-light">
+      <em> Can <strong>efficient</strong> and <strong>practical</strong> RL algorithms be designed for partial observations by exploiting natural structures?</em>
+    </div>
+</div>
+By “efficient” we mean the statistical complexity avoids an exponential dependence on history length,
+while by “practical” we mean that every component of learning, planning and exploration can be easily implemented and applied in practical settings.
+<p>
+In this paper, we provide an <strong>affirmative</strong> answer to this question. More specifically,
+<ul>
+  <li>We reveal for the first time that an &nbsp;-decodable POMDP admits a sufficient representation, the <em>Multi-step Latent Variable Representation (&mu;LV-Rep)</em>, that supports exact and tractable linear representation of the value functions, breaking the fundamental computational barriers;</li>
+  <li>We design a computationally efficient planning algorithm that can implement both the principles of optimism and pessimism in the face of uncertainty for online and offline POMDPs respectively, by leveraging the learned sufficient representation &mu;LV-Rep;</li>
+  <li>We provide a theoretical analysis of the sample complexity of the proposed algorithm, justifying its efficiency in balancing exploitation versus exploration;</li>
+  <li>We conduct a comprehensive empirical comparison to current existing RL algorithms for POMDPs on several benchmarks, demonstrating the superior empirical performance of &mu;LV-Rep.</li>
+</ul>
+    <br>
+    <h2 class="title">Experiments</h2>
+    <br>
+    We evaluate the proposed method on Meta-world, which is an open-source simulated benchmark consisting of 50 distinct robotic manipulation tasks with visual observations. We also provide experiment results on partial observable control problems constructed based on OpenAI gym MuJoCo.
 
+    <h3 class="title">Mujoco Benchmarks</h3>
+    <img src="static/images/mulvrep-table1.png" alt="MY ALT TEXT">
+    <br>
+    <p>Performance on various continuous control problems <span style="color: blue;">with partial observation</span>. All results are averaged across 4 random seeds and a window size of 10K. &mu;LV-Rep achieves the best performance compared to the baselines. Here, Best-FO denotes the performance of LV-Rep using <span style="color: red;">full observations</span> as inputs, providing a reference on how well an algorithm can achieve most in our tests.</p>
+    <p>The results clearly demonstrate that the proposed method consistently delivers either competitive or superior outcomes across all domains  compared to both the model-based and model-free baselines. We note that in most domains, &mu;LV-Rep nearly matches the performance of Best-FO, further confirming that the proposed method is able to extract useful representations for decision-making in partially observable environments.  </p>
+
+    <h3 class="title">Meta-world Benchmarks</h3>
+    <img src="static/images/mulvrep-figure1.jpg" alt="MY ALT TEXT">
+    <br>
+    <p>Success Rate on 50 Meta-world tasks after 1 million interactions. The blue bars show our results, the gray bars show the best performance achieved by DreamerV2 and MWM. Our method succeeds on most of tasks (> 90% on 33 tasks). The results are better than or equivalent to (within 10% difference) the best of DreamerV2 and MWM on 41 tasks.</p>
+    <p>It is noteworthy that while MWM achieves comparable sample efficiency with &mu;LV-Rep in certain tasks, it incurs higher computational costs and longer running times due to the incorporation of ViT network in its model. In our experimental configurations, &mu;LV-Rep demonstrates a training speed of 21.3 steps per second, outperforming MWM, which achieves a lower training speed of 8.1 steps per second. This highlights the computational efficiency of the proposed method.  </p>
+
+</section>
+</section>
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">Citations</h2>
       <pre><code>@misc{ren2023latent,
-        title={Latent Variable Representation for Reinforcement Learning}, 
+        title={Latent Variable Representation for Reinforcement Learning},
         author={Tongzheng Ren and Chenjun Xiao and Tianjun Zhang and Na Li and Zhaoran Wang and Sujay Sanghavi and Dale Schuurmans and Bo Dai},
         year={2023},
         eprint={2212.08765},
@@ -301,12 +367,20 @@ This work provides an affirmative answer to the question above by establishing t
         primaryClass={cs.LG}
   }</code></pre>
   <pre><code>@misc{zhang2022making,
-    title={Making Linear MDPs Practical via Contrastive Representation Learning}, 
+    title={Making Linear MDPs Practical via Contrastive Representation Learning},
     author={Tianjun Zhang and Tongzheng Ren and Mengjiao Yang and Joseph E. Gonzalez and Dale Schuurmans and Bo Dai},
     year={2022},
     eprint={2207.07150},
     archivePrefix={arXiv},
     primaryClass={cs.LG}
+}</code></pre>
+  <pre><code>@misc{zhang2024efficient,
+      title={Efficient Reinforcement Learning from Partial Observability},
+      author={Hongming Zhang and Tongzheng Ren and Chenjun Xiao and Dale Schuurmans and Bo Dai},
+      year={2024},
+      eprint={2311.12244},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
 }</code></pre>
     </div>
 </section>
