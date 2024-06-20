@@ -74,6 +74,16 @@
                   </a>
                 </span>
 
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2311.12244" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Diff-SR Paper</span>
+                </a>
+              </span>
+
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
                   <a href="https://github.com/haotiansun14/rl-rep" target="_blank"
@@ -167,6 +177,7 @@
   <li><a href="#LV-REP">I. LV-REP: Latent Variable Representation for Reinforcement Learning</a></li>
   <li><a href="#CTRL">II. CTRL: Making Linear MDPs Practical via Contrastive Representation Learning</a></li>
   <li><a href="#muLV-Rep">III. Efficient Reinforcement Learning from Partial Observability</a></li>
+  <li><a href="Diff-SR">IV. Diffusion Spectral Representation for Reinforcement Learning</a></li>
 </ul>
 </div>
     
@@ -353,6 +364,83 @@ In this paper, we provide an <strong>affirmative</strong> answer to this questio
 
 </section>
 </section>
+
+
+<section class="section" id="Diff-SR">
+  <div class="container is-max-desktop content">
+    <h2 class="title"><strong>IV. Diff-SR</strong>: <span style="font-weight: normal;">Diffusion Spectral Representation for Reinforcement Learning</span></h2>
+    <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Diffusion-based models have achieved notable empirical successes in reinforcement learning (RL) due to their expressiveness in modeling complex distributions. Despite existing methods being promising, the key challenge of extending existing methods for broader real-world applications lies in the computational cost at inference time, i.e., sampling from a diffusion model is considerably slow as it often requires tens to hundreds of iterations to generate even one sample. To circumvent this issue, we propose to leverage the flexibility of diffusion models for RL from a representation learning perspective. In particular, by exploiting the connection between diffusion model and energy-based model, we develop Diffusion Spectral Representation (Diff-SR), a coherent algorithm framework that enables extracting sufficient representations for value functions in Markov decision processes (MDP) and partially observable Markov decision processes (POMDP). We further demonstrate how Diff-SR facilitates efficient policy optimization and practical algorithms while explicitly bypassing the difficulty and inference cost of sampling from the diffusion model. Finally, we provide comprehensive empirical studies to verify the benefits of Diff-SR in delivering robust and advantageous performance across various benchmarks with both fully and partially observable settings.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Introduction</h2>
+      <div class="content">
+        Although diffusion models are powerful tools to represent complex, multimodal data distributions, its flexibility comes with a substantial inference cost: generating even a single sample from a diffusion model is notably slow, typically requiring tens to thousands of iterations. The computational demands are particularly problematic for RL, since the learning agent must frequently query the model for interactions with the environment. 
+        <!-- Meanwhile, the planning with exploration issue has not been explicitly considered in the existing diffusion-based RL algorithms. The flexibility of diffusion models in fact induces extra difficulty in implementation of the principle of optimism in the face of uncertainty in planning step to balance the inherent trade-off between exploration vs. exploitation, which is indispensable in the online setting to avoid suboptimal policy.  -->
+        <p>
+        In this paper, we exploit the connection between diffusion models and energy-based models (EBMs), and develop Diffusion Spectral Representation (Diff-SR), which leverages the flexibility of diffusion models by extracting representations that capture the dynamics structure. Specifically,
+        <ul>
+        <li>We show that such diffusion-based representations are sufficiently expressive to represent the value function of any policy, which paves the way for efficient planning and exploration;</li>
+        <li>We circumvent the need for sample generation from the diffusion model, and thus avoiding the inference costs associated with prior diffusion-based methods;</li>
+        <li>Integrated with existing model-free policy optimization algorithms, Diff-SR demonstrates robust, superior performance and efficiency across various benchmarks.</li>
+        </ul>
+        <br>
+        <h2 class="title">Experiments</h2>
+        We evaluate Diff-SR with state-based MDP and image-based POMDP tasks to investigate the capability of Diff-SR comprehensively. 
+
+        <h3 class="title">Gym-MuJoCo Benchmarks</h3>
+        The following table presents the performances of Diff-SR and baseline RL algorithms after 200K environment steps. Results are averaged across 4 random seeds and a window size of 10K steps. Diff-SR achieves significantly better or comparable performance to all baseline methods, including a diffusion-based method PolyGRAD in nearly all of the tasks. 
+        <img src="static/images/diffsr-state-mdp.png" alt="MY ALT TEXT">
+        Besides its superior performance, Diff-SR does not require sampling from the diffusion model while still leverages the flexibility of diffusion models. This leads to 4x faster training speed compared to other diffusion-based RL methods, as we observed in our experiments (see the next figure). 
+        <img src="static/images/diffsr-efficiency.png" alt="MY ALT TEXT">
+        <h3 class="title">Meta-World Benchmarks</h2>
+        As the most difficult setting, we evaluate Diff-SR with 8 visual-input tasks selected from the Meta-World Benchmark. We see that Diff-SR achieves a greater than 90% success rate for seven of the tasks, 4 more tasks than the second best baseline &mu;LV-Rep. Overall, Diff-SR exhibits superior performance, faster convergence speed, and stable optimization in most of the tasks compared to the baseline methods. 
+        <img src="static/images/diffsr-image-pomdp.png">
+</div>
+
+
+<!-- By “efficient” we mean the statistical complexity avoids an exponential dependence on history length,
+while by “practical” we mean that every component of learning, planning and exploration can be easily implemented and applied in practical settings.
+<p>
+In this paper, we provide an <strong>affirmative</strong> answer to this question. More specifically,
+<ul>
+  <li>We reveal for the first time that an &nbsp;-decodable POMDP admits a sufficient representation, the <em>Multi-step Latent Variable Representation (&mu;LV-Rep)</em>, that supports exact and tractable linear representation of the value functions, breaking the fundamental computational barriers;</li>
+  <li>We design a computationally efficient planning algorithm that can implement both the principles of optimism and pessimism in the face of uncertainty for online and offline POMDPs respectively, by leveraging the learned sufficient representation &mu;LV-Rep;</li>
+  <li>We provide a theoretical analysis of the sample complexity of the proposed algorithm, justifying its efficiency in balancing exploitation versus exploration;</li>
+  <li>We conduct a comprehensive empirical comparison to current existing RL algorithms for POMDPs on several benchmarks, demonstrating the superior empirical performance of &mu;LV-Rep.</li>
+</ul>
+    <br>
+    <h2 class="title">Experiments</h2>
+    <br>
+    We evaluate the proposed method on Meta-world, which is an open-source simulated benchmark consisting of 50 distinct robotic manipulation tasks with visual observations. We also provide experiment results on partial observable control problems constructed based on OpenAI gym MuJoCo.
+
+    <h3 class="title">Mujoco Benchmarks</h3>
+    <img src="static/images/mulvrep-table1.png" alt="MY ALT TEXT">
+    <br>
+    <p>Performance on various continuous control problems <span style="color: blue;">with partial observation</span>. All results are averaged across 4 random seeds and a window size of 10K. &mu;LV-Rep achieves the best performance compared to the baselines. Here, Best-FO denotes the performance of LV-Rep using <span style="color: red;">full observations</span> as inputs, providing a reference on how well an algorithm can achieve most in our tests.</p>
+    <p>The results clearly demonstrate that the proposed method consistently delivers either competitive or superior outcomes across all domains  compared to both the model-based and model-free baselines. We note that in most domains, &mu;LV-Rep nearly matches the performance of Best-FO, further confirming that the proposed method is able to extract useful representations for decision-making in partially observable environments.  </p>
+
+    <h3 class="title">Meta-world Benchmarks</h3>
+    <img src="static/images/mulvrep-figure1.jpg" alt="MY ALT TEXT">
+    <br>
+    <p>Success Rate on 50 Meta-world tasks after 1 million interactions. The blue bars show our results, the gray bars show the best performance achieved by DreamerV2 and MWM. Our method succeeds on most of tasks (> 90% on 33 tasks). The results are better than or equivalent to (within 10% difference) the best of DreamerV2 and MWM on 41 tasks.</p>
+    <p>It is noteworthy that while MWM achieves comparable sample efficiency with &mu;LV-Rep in certain tasks, it incurs higher computational costs and longer running times due to the incorporation of ViT network in its model. In our experimental configurations, &mu;LV-Rep demonstrates a training speed of 21.3 steps per second, outperforming MWM, which achieves a lower training speed of 8.1 steps per second. This highlights the computational efficiency of the proposed method.  </p> -->
+
+</section>
+</section>
+
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
