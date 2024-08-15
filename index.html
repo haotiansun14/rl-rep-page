@@ -485,7 +485,7 @@ delicate balance between exploration and exploitation. More specifically:</p>
             <li>We provide a spectral decomposition view of several current representation learning methods, and identify the cause of spurious dependencies in state-only spectral features;</li>
             <li>We develop a novel model-free objective, Spectral Decomposition Representation (SPEDER), that factorizes the policy-independent transition kernel to eliminate policy-induced dependencies, while revealing the connection between model-free and model-based representation learning;</li>
             <li>We provide algorithms that implement the principles of optimism and pessimism in the face  of uncertainty using the SPEDER features for online and offline RL, and equip behavior cloning with SPEDER for imitation learning;</li>
-            <li>We analyze the sample complexity of SPEDER in both the online and offline settings, to justify  the achieved balance between exploration versus exploitation .</li>
+            <li>We analyze the sample complexity of SPEDER in both the online and offline settings, to justify  the achieved balance between exploration versus exploitation.</li>
         </ul>
     </div>
 
@@ -493,25 +493,18 @@ delicate balance between exploration and exploitation. More specifically:</p>
     <br>
     We show that SPEDER achieves state-of-the-art performance in MuJoCo and DeepMind Control Suite benchmarks, compared to both model-based (e.g., PETS, ME-TRPO) and model-free RL algorithms (e.g., SAC).
 
-      <! ------ TODO ----- >
 
     <h3 class="title">Dense-Reward Mujoco Benchmarks</h3>
-    <img src="static/images/ctrl-table1.png" alt="MY ALT TEXT">
+    <img src="static/images/speder-table2.png" alt="MY ALT TEXT">
     <br>
-    <p>In the table above, we can see that CTRL-UCBL achieves the state-of-the-art (SoTA) results among all model-based RL algorithms and significantly improves the prior baselines. Despite the improvement in terms of final return, prior model-based RL methods can hardly learn the behaviors such as walking and moving the ant in these two tasks. By contrast, CTRL-UCBL learns the two behaviors successfully.</p>
-    <p>We also compare our algorithm with the SoTA model-free RL method SAC. Our method achieves comparable, sometimes better performance in most of the tasks. Lastly, comparing with two representation learning baselines: DeepSF and SPEDE, CTRL-UCBL also shows dominant performance. However, the performance of CTRL-UCBL is not satisfactory in Humanoid and Hopper environments. It is potentially due to their hard-exploration nature and the linear parametrized Q failed to capture the bonus for exploration.</p>
+    <p>In the above Table, we show that SPEDER achieves SoTA results among all model-based RL algorithms and significantly improves the prior baselines. We also compare the algorithm with the SoTA model-free RL method SAC. The proposed method achieves comparable or better performance in most of the tasks. Lastly, compared to two representation learning baselines and SPEDE, SPEDER also shows superior performance, which demonstrates the proposed SPEDER is able to overcome the aforementioned drawback of vanilla spectral representations.</p>
 
 
     <h3 class="title">Sparse-Reward DeepMind Control Suite</h3>
-    <img src="static/images/ctrl-table2.png" alt="MY ALT TEXT">
+    <img src="static/images/speder-table3.png" alt="MY ALT TEXT">
     <br>
-    <p>To better understand how CTRL performs in a sparse-reward setting, we conduct experiments on the DeepMind Control Suite. We compare CTRL-UCBM with model-free RL methods like SAC (including 2-layer MLP and 3-layer MLP as critic network) and PPO (3-layer of MLP as value network). In addition, we also compare with the representation learning method DeepSF.
-    <p>CTRL-UCBM outperforms SAC (2-layer) by a large margin even in relatively dense reward settings like cheetah-run and walker-run. This margin becomes even larger in sparse-reward settings like walker-run-sparse and hopper-hop. Even comparing with SAC using 3-layer MLP, CTRL-UCBM also achieves better performance. This again shows the effectiveness of our method.</p>
+    <p>To evaluate the exploration performance of SPEDER, we additionally run experiments on the DeepMind Control Suite. We compare the proposed method with SAC, (including a 2-layer, 3-layer and 5-layer MLP for critic network), PPO, Dreamer-v2, Deep SF and Proto-RL. We see that SPEDER achieves superior performance compared to SAC using the 2-layer critic network. Compared to SAC and PPO with deeper critic networks, SPEDER has significant gain in tasks with sparse reward (e.g., walker-run-sparse and hopper-hop).</p>
 
-    <h3 class="title">Offline Reinforcement Learning</h3>
-    <img src="static/images/ctrl-table3.png" alt="MY ALT TEXT">
-    <br>
-    <p>We compare CTRL-LCB with state-of-the-art offline RL algorithms and include CPC as a representation learning baseline. Besides the state-action representation learned in CTRL-LCB, one major difference between CPC and CTRL-LCB is the additional reward penalty introduced by CTRL-LCB. The average normalized scores are presented in the table above. CTRL-LCB performs well on the medium-expert set of tasks. The medium set of tasks also benefit from our method. However, CTRL-LCB is unable to improve the performance of medium-replay, potentially due to low-quality data induced representations being incapable of recovering the good policy.</p>
 </section>
 </section>
 
@@ -568,6 +561,14 @@ delicate balance between exploration and exploitation. More specifically:</p>
     eprint={2406.16121},
     archivePrefix={arXiv},
     primaryClass={cs.LG},
+}</code></pre>
+  <pre><code>@misc{ren2023spectraldecompositionrepresentationreinforcement,
+      title={Spectral Decomposition Representation for Reinforcement Learning},
+      author={Tongzheng Ren and Tianjun Zhang and Lisa Lee and Joseph E. Gonzalez and Dale Schuurmans and Bo Dai},
+      year={2023},
+      eprint={2208.09515},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
 }</code></pre>
     </div>
 </section>
