@@ -478,9 +478,7 @@ In this paper, we provide an <strong>affirmative</strong> answer to this questio
     <div class="container is-max-desktop content">
       <h2 class="title">Introduction</h2>
       <div class="content">
-        <p>In this paper, we address these important but largely ignored issues, and provide a novel spectral
-representation learning method that generates policy-independent features that provably manage the
-delicate balance between exploration and exploitation. More specifically:</p>
+        <p>Despite their elegance and desirable properties, current spectral representation algorithms exhibit several drawbacks. One drawback is that current methods generate state-only features, which are heavily influenced by the behavior policy and can fail to generalize well to alternative polices. Moreover, most existing spectral representation learning algorithms omit the intimate coupling between representation learning and exploration, and instead learn the representation from a pre-collected static dataset. This is problematic as effective exploration depends on having a good representation, while learning the representation requires comprehensively-covered experiences — failing to properly manage this interaction can lead to fundamentally sample-inefficient data collection. These limitations lead to suboptimal features and limited empirical performance.In this paper, we address these important but largely ignored issues, and provide a novel spectral representation learning method that generates policy-independent features that provably manage the delicate balance between exploration and exploitation. More specifically:</p>
         <ul>
             <li>We provide a spectral decomposition view of several current representation learning methods, and identify the cause of spurious dependencies in state-only spectral features;</li>
             <li>We develop a novel model-free objective, Spectral Decomposition Representation (SPEDER), that factorizes the policy-independent transition kernel to eliminate policy-induced dependencies, while revealing the connection between model-free and model-based representation learning;</li>
